@@ -1,6 +1,8 @@
-; enable melpa (with stable archive)
 
+m
 (require 'package) ;; You might already have this line
+
+; enable melpa (with stable archive)
 (let* ((no-ssl (and (memq system-type '(windows-nt ms-dos))
                     (not (gnutls-available-p))))
        (url (concat (if no-ssl "http" "https") "://melpa.org/packages/")))
@@ -9,6 +11,15 @@
   ;; For important compatibility libraries like cl-lib
   (add-to-list 'package-archives '("gnu" . "http://elpa.gnu.org/packages/")))
 (package-initialize) ;; You might already have this line
+
+(require 'use-package)
+
+(use-package company
+	     :ensure t
+	     :demand t
+	     :init (progn
+		     ;; start company mode and enable in all buffers
+		     (add-hook 'after-init-hook 'global-company-mode)))
 
 ; default turn on line numbers
 (global-linum-mode t)
@@ -24,6 +35,6 @@
 ; set default browser for org mode links to "chrome" if chrome is the default xdg browser
 (setq browse-url-browser-function 'browse-url-xdg-open)
 
-; default company-mode in all buffers
-(add-hook 'after-init-hook 'global-company-mode)
+; default enable company-mode in all buffers
+
 
