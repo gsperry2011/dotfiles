@@ -12,3 +12,4 @@
 
 ; set default browser for org mode links to "chrome" if chrome is the default xdg browser
 (setq browse-url-browser-function 'browse-url-xdg-open)
+
