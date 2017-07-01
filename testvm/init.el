@@ -1,6 +1,8 @@
+;;;;;;;;;;;;;;;;;;;;
+;; Greg's init.el ;;
+;;;;;;;;;;;;;;;;;;;;
 
-m
-(require 'package) ;; You might already have this line
+(require 'package)
 
 ; enable melpa (with stable archive)
 (let* ((no-ssl (and (memq system-type '(windows-nt ms-dos))
@@ -10,7 +12,7 @@ m
 (when (< emacs-major-version 24)
   ;; For important compatibility libraries like cl-lib
   (add-to-list 'package-archives '("gnu" . "http://elpa.gnu.org/packages/")))
-(package-initialize) ;; You might already have this line
+(package-initialize)
 
 (require 'use-package)
 
