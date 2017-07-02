@@ -154,11 +154,15 @@ bindsym $mod+r mode "resize"
 bar {
         status_command i3status
 }
-
-#greg custom
+####################
+###  greg custom ###
+####################
 
 #1 pixel window border
 new_window pixel 1
 
 #set screen resolution
 exec ~/git/dotfiles/testvm/scripts/setresolution.sh
+# The picture this script depends on should be in the same directory
+# as the script
+exec ~/git/dotfiles/testvm/scripts/set_background_nitrogen.sh
