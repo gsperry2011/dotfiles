@@ -67,6 +67,19 @@
 (menu-bar-mode -1)
 (tool-bar-mode -1)
 
+; enable word wrap in all modes
+(setq-default auto-fill-function 'do-auto-fill)
+
 ; set default browser for org mode links to "chrome" if chrome is the default xdg browser
 (setq browse-url-browser-function 'browse-url-xdg-open)
+
+;;;;;;;;;;;;;;;;;;
+;; transparency ;;
+;;;;;;;;;;;;;;;;;;
+
+ ;;(set-frame-parameter (selected-frame) 'alpha '(<active> . <inactive>))
+ ;;(set-frame-parameter (selected-frame) 'alpha <both>)
+ (set-frame-parameter (selected-frame) 'alpha '(85 . 50))
+ (add-to-list 'default-frame-alist '(alpha . (85 . 50)))
+
 

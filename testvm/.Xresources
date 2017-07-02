@@ -11,9 +11,12 @@ URxvt.scrollBar: False
 URxvt.font: xft:Inconsolata:pixelsize=12
 URxvt.intensityStyles: false
 
-! Enable urxvt transparency
+!!!!!!!!!!!!!!!!!!!!!
+!!! transparency  !!!
+!!!!!!!!!!!!!!!!!!!!!
+!! .shading determines transparencies of window, the higher the number the more transparent the window will be.
 URxvt.transparent: true
-URxvt.shading: 20
+URxvt.shading: 10
 
 ! hintstyle: medium means that (for Postscript fonts) we
 ! position the stems for maximum constrast and consistency
