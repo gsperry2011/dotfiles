@@ -1,0 +1,3 @@
+mod+tab for rofi -show window
+
+change mod + direction keys for macs  P F N B  

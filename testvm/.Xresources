@@ -14,9 +14,18 @@ URxvt.intensityStyles: false
 !!!!!!!!!!!!!!!!!!!!!
 !!! transparency  !!!
 !!!!!!!!!!!!!!!!!!!!!
-!! .shading determines transparencies of window, the higher the number the more transparent the window will be.
+!! transparency requires compton
+!!.shading determines transparencies of window, the higher the number
+!!the more transparent the window will be.
+!! Note: Emacs transparency is controlled via init.el
+
 URxvt.transparent: true
-URxvt.shading: 10
+
+!! Enable this if you need transparency without a composer (compton)
+URxvt.shading: 1
+
+rofi.color-window: argb: EE000000, argb: EE000000, argb: EE000000
+rofi.color-normal: argb: 00000000, #DEDEDEDE, argb: 00000000, #DEDEDEDE
 
 ! hintstyle: medium means that (for Postscript fonts) we
 ! position the stems for maximum constrast and consistency

@@ -1,0 +1,20 @@
+* Useful switches
+
+  --config <file>
+  -c shadows
+  -C no shadows on dock
+  -G no shadows on drag and drop
+  -f fading when opening / closing and when opacity changes
+  -b daemonize
+  - opacity:
+  - all opacity are values .1 - 1. 1 is no full opaque. 
+    - i opacity of inactive windows
+    - -- active-opacity opacity of active windows
+    - I opacity change between steps while fading in
+    - O opacity change between steps while fading out
+    - e opacity of window titlebars and borders
+
+  - my best so far (set apps to no opacity by default):
+
+compton -cf -i .8 --active-opacity .9
+
