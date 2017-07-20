@@ -8,7 +8,7 @@ Xft.dpi: 96
 ! Disable visible scrollbar
 URxvt.scrollBar: False
 ! Greg defined font
-Urxvt.font: xft:Inconsolata:pixelsize=12
+Urxvt.font: xft:Inconsolata:pixelsize=15
 URxvt.intensityStyles: false
 
 ! hintstyle: medium means that (for Postscript fonts) we
