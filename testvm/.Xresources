@@ -8,8 +8,19 @@ Xft.dpi: 96
 ! Disable visible scrollbar
 URxvt.scrollBar: False
 ! Greg defined font
+<<<<<<< HEAD
 Urxvt.font: xft:Inconsolata:pixelsize=15
+=======
+URxvt.font: xft:Inconsolata:pixelsize=12
+>>>>>>> 5c02302bcff5b0efa60284f09f66aac906cd7897
 URxvt.intensityStyles: false
+
+!!!!!!!!!!!!!!!!!!!!!
+!!! transparency  !!!
+!!!!!!!!!!!!!!!!!!!!!
+!! .shading determines transparencies of window, the higher the number the more transparent the window will be.
+URxvt.transparent: true
+URxvt.shading: 10
 
 ! hintstyle: medium means that (for Postscript fonts) we
 ! position the stems for maximum constrast and consistency
