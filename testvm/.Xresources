@@ -8,11 +8,8 @@ Xft.dpi: 96
 ! Disable visible scrollbar
 URxvt.scrollBar: False
 ! Greg defined font
-<<<<<<< HEAD
-Urxvt.font: xft:Inconsolata:pixelsize=15
-=======
-URxvt.font: xft:Inconsolata:pixelsize=12
->>>>>>> 5c02302bcff5b0efa60284f09f66aac906cd7897
+URxvt.font: xft:Inconsolata:pixelsize=15
+
 URxvt.intensityStyles: false
 
 !!!!!!!!!!!!!!!!!!!!!
