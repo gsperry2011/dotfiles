@@ -1,0 +1,13 @@
+[user]
+	name = Greg Perry
+	email = gsperry2011@gmail.com
+
+[github]
+	user = gsperry2011
+
+[diff]
+	tool = meld
+	
+[merge]
+	tool = meld
+	
