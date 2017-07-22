@@ -1,4 +1,13 @@
 [user]
 	name = Greg Perry
-	email = greg.perry@encore.tech
-#	email = gsperry2011@gmail.com
+	email = gsperry2011@gmail.com
+
+[github]
+	user = gsperry2011
+
+[diff]
+	tool = meld
+	
+[merge]
+	tool = meld
+	
