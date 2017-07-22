@@ -89,10 +89,9 @@
 ;;;;;;;;;;;;;;;;;;
 ;; transparency ;;
 ;;;;;;;;;;;;;;;;;;
-;; working on allowing compton to handle this in a centrally managed
-;; spot for all transparency settings 
+
  ;;(set-frame-parameter (selected-frame) 'alpha '(<active> . <inactive>))
  ;;(set-frame-parameter (selected-frame) 'alpha <both>)
-;; (set-frame-parameter (selected-frame) 'alpha '(85 . 50))
-;; (add-to-list 'default-frame-alist '(alpha . (85 . 50)))
+ (set-frame-parameter (selected-frame) 'alpha '(85 . 50))
+ (add-to-list 'default-frame-alist '(alpha . (85 . 50)))
 
