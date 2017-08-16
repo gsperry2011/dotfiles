@@ -1,2 +1,2 @@
 #! /bin/sh
-nitrogen --set-scaled ~/git/dotfiles/testvm/scripts/neoncityscape01.jpg
+nitrogen --set-scaled ~/git/dotfiles/laptop/scripts/blue_mountains.gif
