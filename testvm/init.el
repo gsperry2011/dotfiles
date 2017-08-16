@@ -73,6 +73,9 @@
 ; set default browser for org mode links to "chrome" if chrome is the default xdg browser
 (setq browse-url-browser-function 'browse-url-xdg-open)
 
+;; adjust autofill column column size from 80
+(setq-default fill-column 100)
+
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
