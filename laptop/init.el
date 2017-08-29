@@ -80,7 +80,7 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;;
 
 ;; enable word wrap in all modes
-(setq-default auto-fill-function 'do-auto-fill)
+; (setq-default auto-fill-function 'do-auto-fill)
 
 ;; adjust autofill column column size from 80
 (setq-default fill-column 100)
@@ -93,7 +93,7 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(package-selected-packages (quote (w3 helm use-package company))))
+ '(package-selected-packages (quote (org python w3 helm use-package company))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -110,3 +110,8 @@
  (set-frame-parameter (selected-frame) 'alpha '(85 . 50))
  (add-to-list 'default-frame-alist '(alpha . (85 . 50)))
 
+;;;;;;;;;;;;;;;;;;;;;;;;;
+;;   org-export        ;;
+;;;;;;;;;;;;;;;;;;;;;;;;;
+
+(require 'ox-confluence)
