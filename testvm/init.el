@@ -56,33 +56,44 @@
             ;; current buffer before stuff outside of this buffer
             (setq company-transformers (quote (company-sort-by-occurrence))))
 
+;;;;;;;;;;;;;;;;;;;;;;;;;
+;;   line num mode     ;;
+;;;;;;;;;;;;;;;;;;;;;;;;;
+
 ; default turn on line numbers
 (global-linum-mode t)
 
 ; adding space between line numbers and lines
 (setq linum-format "%d ")
 
-;disable these bars of junk
+;;;;;;;;;;;;;;;;;;;;;;;;;
+;;  minimilist  mode   ;;
+;;;;;;;;;;;;;;;;;;;;;;;;;
+
+;;disable these bars of junk
 (scroll-bar-mode -1)
 (menu-bar-mode -1)
 (tool-bar-mode -1)
 
-; enable word wrap in all modes
-(setq-default auto-fill-function 'do-auto-fill)
+;;;;;;;;;;;;;;;;;;;;;;;;;
+;;   auto-fill mode    ;;
+;;;;;;;;;;;;;;;;;;;;;;;;;
 
-; set default browser for org mode links to "chrome" if chrome is the default xdg browser
-(setq browse-url-browser-function 'browse-url-xdg-open)
+;; enable word wrap in all modes
+; (setq-default auto-fill-function 'do-auto-fill)
 
 ;; adjust autofill column column size from 80
 (setq-default fill-column 100)
+
+;; set default browser for org mode links to "chrome" if chrome is the default xdg browser
+(setq browse-url-browser-function 'browse-url-xdg-open)
 
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(org-export-backends (quote (ascii beamer html icalendar latex odt confluence)))
- '(package-selected-packages (quote (w3 helm use-package company))))
+ '(package-selected-packages (quote (org python w3 helm use-package company))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -100,7 +111,7 @@
  (add-to-list 'default-frame-alist '(alpha . (85 . 50)))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;
-;;  org-export         ;;
+;;   org-export        ;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;
 
 (require 'ox-confluence)
