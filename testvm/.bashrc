@@ -16,3 +16,4 @@ export EDITOR='emacs -nw'
 alias emacs='TERM=xterm-256color emacs'
 alias powershell='~/git/bash_scripts/powershell_lib_curl.sh'
 
+alias ll='ls -al'
