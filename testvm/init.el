@@ -115,3 +115,21 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;;
 
 (require 'ox-confluence)
+
+
+;;;;;;;;;;;;;;;;;;;;;;;;;
+;;    org-bullets      ;;
+;;;;;;;;;;;;;;;;;;;;;;;;;
+
+; default enable org-bullets in org-mode buffers
+(require 'org-bullets)
+(add-hook 'org-mode-hook (lambda () (org-bullets-mode 1)))
+
+;;;;;;;;;;;;;;;;;;;;;;;;;
+;;   beancount-mode    ;;
+;;;;;;;;;;;;;;;;;;;;;;;;;
+
+; location of beancount.el
+(add-to-list 'load-path "~/.local/elisp")
+(require 'beancount)
+
