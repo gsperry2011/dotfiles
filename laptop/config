@@ -30,7 +30,7 @@ font VT323:style=Regular 4
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec i3-sensible-terminal
+bindsym $mod+Return exec konsole
 
 # kill focused window
 bindsym $mod+Shift+q kill
@@ -162,10 +162,10 @@ bar {
 new_window pixel 1
 
 #set screen resolution
-exec ~/git/dotfiles/testvm/scripts/setresolution.sh
+exec ~/git/dotfiles/laptop/scripts/laptop_dock_set_resolution.sh
 # The picture this script depends on should be in the same directory
 # as the script
-exec ~/git/dotfiles/testvm/scripts/set_background_nitrogen.sh
+exec ~/git/dotfiles/laptop/scripts/set_background_nitrogen.sh
 
 #Auto start spotify
 exec_always spotify
