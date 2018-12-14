@@ -1,6 +1,6 @@
 [user]
 	name = Greg Perry
-	email = gsperry2011@gmail.com
+	email = greg.perry@encore.tech
 
 [github]
 	user = gsperry2011
@@ -11,3 +11,5 @@
 [merge]
 	tool = meld
 	
+[alias]
+	meld = !/bin/meld
