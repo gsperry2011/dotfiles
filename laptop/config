@@ -162,7 +162,7 @@ bar {
 new_window pixel 1
 
 #set screen resolution
-exec ~/git/dotfiles/laptop/scripts/laptop_dock_set_resolution.sh
+#exec ~/git/dotfiles/laptop/scripts/laptop_dock_set_resolution.sh
 # The picture this script depends on should be in the same directory
 # as the script
 exec ~/git/dotfiles/laptop/scripts/set_background_nitrogen.sh
