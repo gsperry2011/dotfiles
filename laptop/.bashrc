@@ -23,3 +23,11 @@ powerline-daemon -q
 export POWERLINE_BASH_CONTINUATION=1
 export POWERLINE_BASH_SELECT=1
 . /usr/lib/python2.7/site-packages/powerline/bindings/bash/powerline.sh
+
+#############
+#   Emacs   #
+#############
+
+# In centos7 I need to run this for my solarized color scheme to work otherwise after reboots I get:
+# Undefined color: "S_base0"
+xrdb -load ~/.Xresources -cpp /usr/bin/cpp
