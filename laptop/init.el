@@ -66,14 +66,24 @@
 ; adding space between line numbers and lines
 (setq linum-format "%d ")
 
+;; Disble linum-mode in org buffers - more than 200+ lines with linum on makes emacs SLOWWW
+(add-hook 'org-mode-hook (lambda () (linum-mode 0)))
+
 ;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;  minimilist  mode   ;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;
 
-;;disable these bars of junk
+;; disable these bars of junk
 (scroll-bar-mode -1)
 (menu-bar-mode -1)
 (tool-bar-mode -1)
+
+;;;;;;;;;;;;;;;;;;;;;;;;;
+;;     status bar      ;;
+;;;;;;;;;;;;;;;;;;;;;;;;;
+
+;; enable column number mode 
+(setq column-number-mode t)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;   auto-fill mode    ;;
@@ -134,3 +144,5 @@
 (helm-mode 1)
 
 (global-set-key (kbd "C-x C-f") 'helm-find-files)
+
+
