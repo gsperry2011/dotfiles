@@ -14,7 +14,9 @@ export COLORTERM=urxvt256c
 export EDITOR='emacs -nw'
 #alias emacs='emacs -nw'
 alias emacs='TERM=xterm-256color emacs'
-alias powershell='~/git/bash_scripts/powershell_lib_curl.sh'
+# Old PS core version
+#alias powershell='~/git/bash_scripts/powershell_lib_curl.sh'
+alias powershell='sudo /opt/microsoft/powershell/pwsh'
 
 #############
 # Powerline #
