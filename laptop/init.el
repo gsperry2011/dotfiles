@@ -98,21 +98,6 @@
 ;; set default browser for org mode links to "chrome" if chrome is the default xdg browser
 (setq browse-url-browser-function 'browse-url-xdg-open)
 
-(custom-set-variables
- ;; custom-set-variables was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- '(package-selected-packages
-   (quote
-    (yaml-mode puppet-mode magit powershell org-bullets ledger-mode org python w3 helm use-package company))))
-(custom-set-faces
- ;; custom-set-faces was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- )
-
 ;;;;;;;;;;;;;;;;;;
 ;; transparency ;;
 ;;;;;;;;;;;;;;;;;;
@@ -145,4 +130,49 @@
 
 (global-set-key (kbd "C-x C-f") 'helm-find-files)
 
+;;;;;;;;;;;;;;;;;;;;;;;;;
+;;    tab-settings     ;;
+;;;;;;;;;;;;;;;;;;;;;;;;;
+
+(defun my-setup-indent (n)
+  ;; java/c/c++
+  (setq-local c-basic-offset n)
+  ;; web development
+  (setq-local coffee-tab-width n) ; coffeescript
+  (setq-local javascript-indent-level n) ; javascript-mode
+  (setq-local js-indent-level n) ; js-mode
+  (setq-local js2-basic-offset n) ; js2-mode, in latest js2-mode, it's alias of js-indent-level
+  (setq-local web-mode-markup-indent-offset n) ; web-mode, html tag in html file
+  (setq-local web-mode-css-indent-offset n) ; web-mode, css in html file
+  (setq-local web-mode-code-indent-offset n) ; web-mode, js code in html file
+  (setq-local css-indent-offset n) ; css-mode
+  )
+
+(defun my-personal-code-style ()
+  (interactive)
+  (message "Welcome Old Friend!")
+  ;; use space instead of tab
+  (setq indent-tabs-mode nil)
+  ;; indent 2 spaces width
+  (my-setup-indent 2))
+
+;; enables my-personal-code-style (defined within this init.el) when entering Javascript major mode
+(add-hook 'js-mode-hook (lambda () (my-personal-code-style)))
+
+
+;; emacs wrote this itself
+(custom-set-variables
+ ;; custom-set-variables was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(package-selected-packages
+   (quote
+    (highlight-indentation yaml-mode w3 use-package python puppet-mode powershell org-bullets org magit ledger-mode helm company))))
+(custom-set-faces
+ ;; custom-set-faces was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ )
 
