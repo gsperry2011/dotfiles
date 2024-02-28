@@ -111,7 +111,7 @@
 ;;   org-export        ;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;
 
-(require 'ox-confluence)
+;; (require 'ox-confluence)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;    org-bullets      ;;
@@ -119,6 +119,13 @@
 
 (require 'org-bullets)
 (add-hook 'org-mode-hook (lambda () (org-bullets-mode 1)))
+
+
+;;;;;;;;;;;;;;;;;;;;;;;;;
+;;    org-templates    ;;
+;;;;;;;;;;;;;;;;;;;;;;;;;
+
+(require 'org-tempo)
 
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;
@@ -166,9 +173,12 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
+ '(custom-enabled-themes '(solarized-dark))
+ '(custom-safe-themes
+   '("f5b6be56c9de9fd8bdd42e0c05fecb002dedb8f48a5f00e769370e4517dde0e8" "4c56af497ddf0e30f65a7232a8ee21b3d62a8c332c6b268c81e9ea99b11da0d3" "fee7287586b17efbfda432f05539b58e86e059e78006ce9237b8732fde991b4c" default))
+ '(ispell-dictionary nil)
  '(package-selected-packages
-   (quote
-    (highlight-indentation yaml-mode w3 use-package python puppet-mode powershell org-bullets org magit ledger-mode helm company))))
+   '(go-mode python-mode solarized-theme highlight-indentation yaml-mode w3 use-package python puppet-mode powershell org-bullets org magit ledger-mode helm company)))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -176,3 +186,12 @@
  ;; If there is more than one, they won't work right.
  )
 
+
+;;;;;;;;;;;;;;;;;;;;;;;;;
+;;   custom-keybinds   ;;
+;;;;;;;;;;;;;;;;;;;;;;;;;
+
+;; idk what this bind is now but it seems useless..
+(global-unset-key (kbd "C-x C-;"))
+
+(global-set-key (kbd "C-x C-;") 'comment-region)
