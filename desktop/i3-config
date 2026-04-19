@@ -173,8 +173,9 @@ bindsym $mod+Shift+m [class="Spotify"] scratchpad show
 bindsym $mod+l exec i3lock -i /home/greg/Pictures/lockscreenBG.png -t
 # bindsym Print exec shutter -s
 
-#Automove comms to 3rd workspace and tab view them
-for_window [title="Pushbullet"] move workspace 3, [workspace="3"] layout tabbed
+# Automove comms to 3rd workspace and tab view them
+# Note: the ordering of stuff between commas matters. Everything after [workspace="X"] targets ALL windows in that "X" workspace!
+for_window [title="Pushbullet"] move workspace 3, title_format "Pushbullet", [workspace="3"] layout tabbed
 for_window [title="Slack"] move workspace 3, [workspace="3"] layout tabbed
 for_window [title="Discord"] move workspace 3, [workspace="3"] layout tabbed
 
