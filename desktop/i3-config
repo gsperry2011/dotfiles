@@ -183,6 +183,10 @@ for_window [title="Discord"] move workspace 3, [workspace="3"] layout tabbed
 for_window [title="Google Hangouts"] floating disable
 for_window [title="Win7 VM"] floating disable
 
+# Force Qalculate to float and set a nice size
+# i symlinked qalculate with this bc i cba to remember that
+for_window [class="Calculator"] floating enable, resize set 400 600, move position center
+
 #Assigning workspaces to specific monitors
 workspace 1 output DP-2
 workspace 2 output DP-0
