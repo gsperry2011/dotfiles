@@ -173,10 +173,10 @@ bindsym $mod+Shift+m [class="Spotify"] scratchpad show
 bindsym $mod+l exec i3lock -i /home/greg/Pictures/lockscreenBG.png -t
 # bindsym Print exec shutter -s
 
-#Automove Pushbullet to 3rd workspace
-for_window [title="Pushbullet"] move workspace 3
-for_window [title="Slack"] move workspace 3
-for_window [title="Win7 VM"] move workspace 1
+#Automove comms to 3rd workspace and tab view them
+for_window [title="Pushbullet"] move workspace 3, [workspace="3"] layout tabbed
+for_window [title="Slack"] move workspace 3, [workspace="3"] layout tabbed
+for_window [title="Discord"] move workspace 3, [workspace="3"] layout tabbed
 
 #changing behavior of program that opens as floating
 for_window [title="Google Hangouts"] floating disable
