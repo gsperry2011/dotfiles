@@ -171,7 +171,7 @@ for_window [class="Spotify"] move scratchpad
 # Greg custom keybinds
 bindsym $mod+Shift+m [class="Spotify"] scratchpad show 
 bindsym $mod+l exec i3lock -i /home/greg/Pictures/lockscreenBG.png -t
-# bindsym Print exec shutter -s
+bindsym Print exec shutter -s
 
 # Automove comms to 3rd workspace and tab view them
 # Note: the ordering of stuff between commas matters. Everything after [workspace="X"] targets ALL windows in that "X" workspace!
