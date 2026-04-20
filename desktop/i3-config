@@ -159,27 +159,11 @@ bindsym $mod+r mode "resize"
 
 # ln -s ~/.config/i3blocks/conf.d/* to the i3blocks dir in this repo
 bar {
-	#output primary
 	workspace_buttons yes
-	status_command cat ~/.config/i3blocks/conf.d/*.conf | i3blocks -c /dev/stdin
+        # Grabs all files *.conf
+	# needs to be compiled into a file at runtime so i3blocks can continue to have STDIN for mouseclick events
+	status_command cat ~/.config/i3blocks/conf.d/*.conf > /tmp/i3blocks.conf && i3blocks -c /tmp/i3blocks.conf
 }
-
-
-# bar {
-#         id spotify-bar
-# 	position bottom
-# 	output primary
-# 	workspace_buttons no
-# 	status_command cat ~/.config/i3blocks/conf.d/spotify | i3blocks -c /dev/stdin
-# }
-
-# bar {
-#         id default-bar
-#         position bottom
-# 	output primary
-# 	workspace_buttons yes
-# 	status_command cat ~/.config/i3blocks/conf.d/default | i3blocks -c /dev/stdin
-# }
 
 #1 pixel window border
 new_window pixel 1
