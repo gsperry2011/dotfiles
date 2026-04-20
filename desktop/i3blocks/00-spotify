@@ -1,0 +1,9 @@
+[spotify]
+label=$
+command=playerctl -p spotify metadata --format "{{ artist }} - {{ title }}" 2>/dev/null || echo "Spotify Offline"
+interval=5
+color=#1ED760
+min_width=400
+align=left
+separator=true
+

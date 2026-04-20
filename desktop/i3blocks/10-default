@@ -1,0 +1,25 @@
+# Global properties
+separator=true
+separator_block_width=15
+
+[cpu_usage]
+label=CPU 
+command=/usr/share/i3blocks/cpu_usage
+interval=10
+
+[memory]
+label=MEM 
+command=/usr/share/i3blocks/memory
+interval=30
+
+[disk]
+label=HOME 
+instance=$HOME
+command=/usr/share/i3blocks/disk
+interval=30
+
+[time]
+label=📅 
+command=date '+%Y-%m-%d %H:%M:%S'
+interval=1
+
