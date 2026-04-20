@@ -148,12 +148,38 @@ bindsym $mod+r mode "resize"
 
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
-bar {
-        status_command i3status
-}
+# bar {
+#         status_command i3status
+# }
+
+
 ####################
 ###  greg custom ###
 ####################
+
+# ln -s ~/.config/i3blocks/conf.d/* to the i3blocks dir in this repo
+bar {
+	#output primary
+	workspace_buttons yes
+	status_command cat ~/.config/i3blocks/conf.d/* | i3blocks -c /dev/stdin
+}
+
+
+# bar {
+#         id spotify-bar
+# 	position bottom
+# 	output primary
+# 	workspace_buttons no
+# 	status_command cat ~/.config/i3blocks/conf.d/spotify | i3blocks -c /dev/stdin
+# }
+
+# bar {
+#         id default-bar
+#         position bottom
+# 	output primary
+# 	workspace_buttons yes
+# 	status_command cat ~/.config/i3blocks/conf.d/default | i3blocks -c /dev/stdin
+# }
 
 #1 pixel window border
 new_window pixel 1
@@ -176,7 +202,7 @@ bindsym Print exec shutter -s
 # Automove comms to 3rd workspace and tab view them
 # Note: the ordering of stuff between commas matters. Everything after [workspace="X"] targets ALL windows in that "X" workspace!
 for_window [title="Pushbullet"] move workspace 3, title_format "Pushbullet", [workspace="3"] layout tabbed
-for_window [title="Slack"] move workspace 3, [workspace="3"] layout tabbed
+for_window [class="Slack"] move workspace 3, [workspace="3"] layout tabbed
 for_window [title="Discord"] move workspace 3, [workspace="3"] layout tabbed
 
 #changing behavior of program that opens as floating
