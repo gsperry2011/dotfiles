@@ -161,7 +161,7 @@ bindsym $mod+r mode "resize"
 bar {
 	#output primary
 	workspace_buttons yes
-	status_command cat ~/.config/i3blocks/conf.d/* | i3blocks -c /dev/stdin
+	status_command cat ~/.config/i3blocks/conf.d/*.conf | i3blocks -c /dev/stdin
 }
 
 
