@@ -16,8 +16,8 @@ set $mod Mod4
 
 # This font is widely installed, provides lots of unicode glyphs, right-to-left
 # text rendering and scalability on retina/hidpi displays (thanks to pango).
-#font pango:DejaVu Sans Mono 4
-font VT323:style=Regular 4
+font pango:DejaVu Sans Mono 9
+# font VT323:style=Regular 4
 
 # Before i3 v4.8, we used to recommend this one as the default:
 # font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
@@ -36,7 +36,8 @@ bindsym $mod+Return exec konsole
 bindsym $mod+Shift+q kill
 
 # start dmenu (a program launcher)
-bindsym $mod+d exec dmenu_run
+#bindsym $mod+d exec dmenu_run
+bindsym $mod+d exec --no-startup-id rofi -show drun
 # There also is the (new) i3-dmenu-desktop which only displays applications
 # shipping a .desktop file. It is a wrapper around dmenu, so you need that
 # installed.
@@ -151,12 +152,22 @@ bindsym $mod+r mode "resize"
 
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
-bar {
-        status_command i3status
-}
+# bar {
+#         status_command i3status
+# }
 ####################
 ###  greg custom ###
 ####################
+
+# To make this work:
+# 1. mkdir -p ~/.config/i3blocks && cd  ~/.config/i3blocks
+# 2. ln -s ~/git/dotfiles/laptop/i3blocks conf.d
+bar {
+	workspace_buttons yes
+        # Grabs all files *.conf
+	# needs to be compiled into a file at runtime so i3blocks can continue to have STDIN for mouseclick events
+	status_command cat ~/.config/i3blocks/conf.d/*.conf > /tmp/i3blocks.conf && i3blocks -c /tmp/i3blocks.conf
+}
 
 #1 pixel window border
 new_window pixel 1
@@ -178,10 +189,10 @@ bindsym $mod+Shift+m [class="Spotify"] scratchpad show
 bindsym $mod+l exec i3lock -i /home/greg/Pictures/lockscreenBG.png -t
 bindsym Print exec shutter -s
 
-#Automove Pushbullet to 3rd workspace
-for_window [title="Pushbullet"] move workspace 3
-for_window [title="Slack"] move workspace 3
-for_window [title="Win7 VM"] move workspace 1
+#Automove windows to proper workspace
+for_window [title="Pushbullet"] move workspace 3, title_format "Pushbullet", [workspace="3"] layout tabbed
+for_window [class="Slack"] move workspace 3, [workspace="3"] layout tabbed
+for_window [title="Discord"] move workspace 3, [workspace="3"] layout tabbed
 
 #changing behavior of program that opens as floating
 for_window [title="Google Hangouts"] floating disable
@@ -193,4 +204,8 @@ workspace 2 output DP-2-1
 workspace 3 output DP-2-2
 workspace 4 output DP-2-2
 workspace 10 output DP-2-1
+
+# Force Qalculate to float and set a nice size
+# i symlinked qalculate with this bc i cba to remember that
+for_window [class="Calculator"] floating enable, resize set 400 600, move position center
 
