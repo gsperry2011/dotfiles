@@ -184,7 +184,7 @@ for_window [class="Spotify"] move scratchpad
 
 # Greg custom keybinds
 bindsym $mod+Shift+m [class="Spotify"] scratchpad show 
-bindsym $mod+l exec i3lock -i /home/greg/Pictures/lockscreenBG.png -t
+bindsym $mod+l exec i3lock-fancy
 bindsym Print exec shutter -s
 
 # Automove comms to 3rd workspace and tab view them
