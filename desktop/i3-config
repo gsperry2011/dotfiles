@@ -175,6 +175,9 @@ new_window pixel 1
 # set screen resolution
 exec --no-startup-id ~/.screenlayout/desk_triples.sh
 
+# enable clipboard QoL
+exec /usr/bin/copyq
+
 # The picture this script depends on should be in the same directory
 # as the script
 exec ~/git/dotfiles/desktop/scripts/set_background_nitrogen.sh
