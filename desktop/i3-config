@@ -176,7 +176,9 @@ new_window pixel 1
 exec --no-startup-id ~/.screenlayout/desk_triples.sh
 
 # enable clipboard QoL
-exec /usr/bin/copyq
+exec --no-startup-id /usr/bin/copyq
+# systray icon for audio devices
+exec --no-startup-id indicator-sound-switcher
 
 # The picture this script depends on should be in the same directory
 # as the script
