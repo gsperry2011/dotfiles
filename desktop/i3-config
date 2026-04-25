@@ -193,7 +193,7 @@ exec --no-startup-id caffeine
 for_window [class="Spotify"] move scratchpad
 
 # Greg custom keybinds
-bindsym $mod+Shift+m [class="Spotify"] scratchpad show 
+bindsym $mod+Shift+m [class="Spotify"] scratchpad show, fullscreen enable
 bindsym $mod+l exec i3lock-fancy
 bindsym Print exec shutter -s
 
@@ -211,6 +211,9 @@ for_window [title="Win7 VM"] floating disable
 # i symlinked qalculate with this bc i cba to remember that
 for_window [class="Calculator"] floating enable, resize set 400 600, move position center
 
+# Force weather (3 day forecast) to be floating and centered
+for_window [title="Weather Forecast.*"] floating enable, resize set 1400 950, move position center
+
 #Assigning workspaces to specific monitors
 workspace 1 output DP-2
 workspace 2 output DP-0
@@ -219,11 +222,12 @@ workspace 4 output DP-0
 workspace 10 output DP-0
 
 # Multimedia keys to control audio/video
-bindsym XF86AudioPlay exec --no-startup-id playerctl play-pause
-bindsym XF86AudioPause exec --no-startup-id playerctl play-pause
-bindsym XF86AudioNext exec --no-startup-id playerctl next
-bindsym XF86AudioPrev exec --no-startup-id playerctl previous
-bindsym XF86AudioStop exec --no-startup-id playerctl stop
+bindsym XF86AudioPlay exec --no-startup-id playerctl -p spotify play-pause
+bindsym XF86AudioPause exec --no-startup-id playerctl -p spotify play-pause
+bindsym XF86AudioNext exec --no-startup-id playerctl -p spotify next
+bindsym XF86AudioPrev exec --no-startup-id playerctl -p spotify previous
+bindsym XF86AudioStop exec --no-startup-id playerctl -p spotify stop
+
 # Media volume controls are a little bit more difficult, matters which audio control layer you're using (alsa, pipewire (wireplumber?), etc)
 bindsym XF86AudioMute exec --no-startup-id wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle
 bindsym XF86AudioLowerVolume exec --no-startup-id wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-
