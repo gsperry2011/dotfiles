@@ -20,6 +20,7 @@ fi
 # Case for mouse clicks (optional)
 case $BLOCK_BUTTON in
     1) wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle ;; # Left click: toggle mute
+    3) pavucontrol & disown ;;
     4) wpctl set-volume -l 1.0 @DEFAULT_AUDIO_SINK@ 5%+ ;; # Scroll up: +5%
     5) wpctl set-volume -l 1.0 @DEFAULT_AUDIO_SINK@ 5%- ;; # Scroll down: -5%
 esac
