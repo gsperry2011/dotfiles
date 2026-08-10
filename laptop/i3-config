@@ -190,13 +190,15 @@ bindsym $mod+l exec i3lock-fancy
 bindsym Print exec shutter -s
 
 #Automove windows to proper workspace
+# use 'xprop' on the terminal to find this info about an app/window
 for_window [title="Pushbullet"] move workspace 3, title_format "Pushbullet", [workspace="3"] layout tabbed
+for_window [title=".*Chat — Mozilla Firefox$"] move workspace 3, title_format "Google Chat", [workspace="3"] layout tabbed
 for_window [class="Slack"] move workspace 3, [workspace="3"] layout tabbed
 for_window [title="Discord"] move workspace 3, [workspace="3"] layout tabbed
 
 #changing behavior of program that opens as floating
-for_window [title="Google Hangouts"] floating disable
-for_window [title="Win7 VM"] floating disable
+#for_window [title="Google Hangouts"] floating disable
+#for_window [title="Win7 VM"] floating disable
 
 #Assigning workspaces to specific monitors
 workspace 1 output eDP-1
