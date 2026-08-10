@@ -173,7 +173,8 @@ bar {
 new_window pixel 1
 
 # set screen resolution
-exec --no-startup-id ~/.screenlayout/desk_triples.sh
+# exec --no-startup-id ~/.screenlayout/desk_triples.sh
+exec --no-startup-id ~/scripts/xrandr_configs/desk-triples.sh
 
 # enable clipboard QoL
 exec --no-startup-id /usr/bin/copyq
@@ -196,6 +197,12 @@ for_window [class="Spotify"] move scratchpad
 bindsym $mod+Shift+m [class="Spotify"] scratchpad show, fullscreen enable
 bindsym $mod+l exec i3lock-fancy
 bindsym Print exec shutter -s
+bindsym Shift+F4 exec --no-startup-id /home/abrax/git/bash_ahk_testing/vintage_story_auto_sifter.sh
+bindsym Shift+F3 exec --no-startup-id /home/abrax/git/bash_ahk_testing/vintage_story_auto_miner.sh
+
+# monitor swap between rig and desk
+bindsym $mod+Shift+F1 exec --no-startup-id ~/scripts/xrandr_configs/desk-triples.sh
+bindsym $mod+Shift+F2 exec --no-startup-id ~/scripts/xrandr_configs/sim-triples.sh
 
 # Automove comms to 3rd workspace and tab view them
 # Note: the ordering of stuff between commas matters. Everything after [workspace="X"] targets ALL windows in that "X" workspace!
@@ -204,12 +211,12 @@ for_window [class="Slack"] move workspace 3, [workspace="3"] layout tabbed
 for_window [title="Discord"] move workspace 3, [workspace="3"] layout tabbed
 
 #changing behavior of program that opens as floating
-for_window [title="Google Hangouts"] floating disable
+for_window [title="Google Chat"] floating disable
 for_window [title="Win7 VM"] floating disable
 
 # Force Qalculate to float and set a nice size
 # i symlinked qalculate with this bc i cba to remember that
-for_window [class="Calculator"] floating enable, resize set 400 600, move position center
+for_window [title="Qalculate!"] floating enable, resize set 400 600, move position center
 
 # Force weather (3 day forecast) to be floating and centered
 for_window [title="Weather Forecast.*"] floating enable, resize set 1400 950, move position center
